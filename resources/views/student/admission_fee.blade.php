@@ -77,8 +77,9 @@
       </div>
     </aside>
 </div>
-<div class="flex justify-center items-center">
+<div class="flex justify-center items-center space-x-2">
   <a  href="javascript:void(0)" onclick="pdf()"><button type="button" class="text-[16px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Download PDF</button></a>
+  <a  href="student_admission_fee/{{ $item->id }}"><button type="button" class="text-[16px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Pay Now</button></a>
 </div>
 
 

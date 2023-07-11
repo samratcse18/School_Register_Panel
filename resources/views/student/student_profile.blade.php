@@ -33,13 +33,13 @@
                 <small class="text-white">Address: {{$item->address}}</small>
                 <div class="lg:absolute pt-[40px] lg:pt-0 flex justify-between lg:space-x-2 lg:bottom-5">
                     <a href='admission_fee/{{ $item->id }}'>
-                        <button class="text-xs text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-2 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Admission Fee</button>
+                        <button id="admission_fee" class="text-xs text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-2 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Admission Fee</button>
                     </a>
                     <a href='midturm_fee/{{ $item->id }}'>
-                        <button class="text-xs text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-2 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Midturm Fee</button>
+                        <button id="midturm_fee" class="text-xs text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-2 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Midturm Fee</button>
                     </a>
                     <a href='final_fee/{{ $item->id }}'>
-                        <button class="text-xs text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-2 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Final Fee</button>
+                        <button id="final_fee" class="text-xs text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-2 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Final Fee</button>
                     </a>
                 </div>
             </div>
@@ -48,5 +48,29 @@
 @endforeach
 
 
+<script>
+    const data1 = '{{ $item->admission_fee }}';
+    const data2 = '{{ $item->midturm_fee }}';
+    const data3 = '{{ $item->final_fee }}';
+    const admission_fee = document.getElementById('admission_fee');
+    const midturm_fee = document.getElementById('midturm_fee');
+    const final_fee = document.getElementById('final_fee');
+    if(data1 === 'paid'){
+        admission_fee.setAttribute('disabled', true);
+        admission_fee.innerText = "Admission Paid";
+        admission_fee.style.backgroundColor = 'gray';
+    }
+    if(data2 === 'paid'){
+        midturm_fee.setAttribute('disabled', true);
+        midturm_fee.innerText = "Midturm Paid";
+        midturm_fee.style.backgroundColor = 'gray';
+    }
+    if(data3 === 'paid'){
+        final_fee.setAttribute('disabled', true);
+        final_fee.innerText = "Final Paid";
+        final_fee.style.backgroundColor = 'gray';
+    }
+    
+</script>
 </body>
 </html>

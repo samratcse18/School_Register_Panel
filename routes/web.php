@@ -48,5 +48,8 @@ Route::middleware(['auth:register'])->group(function () {
     Route::get('/fee_list/delete_fee_list/{id}', [StudentController::class, 'delete_fee_list']);
     Route::get('/fee_list/edit_fee_list/{id}', [StudentController::class, 'edit_fee_list']);
     Route::post('/update_fee/{id}', [StudentController::class, 'update_fee'])->name('update_fee.student');
+    Route::get('/student_profile/admission_fee/student_admission_fee/{id}', [StudentController::class, 'student_admission_fee']);
+    Route::get('/student_profile/midturm_fee/student_admission_fee/{id}', [StudentController::class, 'student_midturm_fee']);
+    Route::get('/student_profile/final_fee/student_admission_fee/{id}', [StudentController::class, 'student_final_fee']);
 });
 

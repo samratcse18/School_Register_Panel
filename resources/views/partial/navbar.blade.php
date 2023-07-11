@@ -1,7 +1,7 @@
 <nav class="fixed top-0 w-full z-10 bg-white border-gray-200 px-2 sm:px-4 py-1 dark:bg-gray-900">
   <div class="flex justify-between">
     <div>
-    <img src="home_image/logo.png" height="60" width="60" alt="">
+    <img src="{{ asset('home_image/logo.png') }}" height="60" width="60" alt="">
     </div>
     <div class="container flex flex-wrap items-center justify-end mx-auto">
       <div class="flex md:order-2">

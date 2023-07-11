@@ -217,4 +217,25 @@ class StudentController extends Controller
                 $new->save();
             return redirect()->back()->with('success','Update Fee Successfully');
         }
-}
+        public function student_admission_fee($id){
+            $new = Admission::findOrFail($id);
+            $new->admission_fee="paid";
+            $new->save();
+            // return view('student.student_profile');
+            return redirect()->route('user.student');
+        }
+        public function student_midturm_fee($id){
+            $new = Admission::findOrFail($id);
+            $new->midturm_fee="paid";
+            $new->save();
+            // return view('student.student_profile');
+            return redirect()->route('user.student');
+        }
+        public function student_final_fee($id){
+            $new = Admission::findOrFail($id);
+            $new->final_fee="paid";
+            $new->save();
+            // return view('student.student_profile');
+            return redirect()->route('user.student');
+        }
+    }
